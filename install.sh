@@ -12,7 +12,7 @@ if [ "$1" = "remove" ]; then
     echo "removing cron..."
     sudo rm /etc/cron.d/autoaway
 else
-    if [ ! -d "$DIR/autoaway"]; then
+    if [ ! -d "$DIR/autoaway" ]; then
         echo "installing dependencies..."
         git clone https://github.com/MilhouseVH/autoaway.py.git autoaway
         git clone https://github.com/anstosa/pynest.git pynest

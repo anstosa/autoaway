@@ -9,10 +9,14 @@ JOB="@reboot $DIR/autoawayd.sh start"
 if [ "$1" = "remove" ]; then
     echo "stopping autoaway..."
     ./autoawayd.sh stop
-    echo "removing cron"
+    echo "removing cron..."
     sudo rm /etc/cron.d/autoaway
 else
-    # add job to crontab
+    if [ ! -d "$DIR/autoaway"]; then
+        echo "installing dependencies..."
+        git clone https://github.com/MilhouseVH/autoaway.py.git autoaway
+        git clone https://github.com/anstosa/pynest.git pynest
+    fi
     echo "initializing executables..."
     sudo chmod u+x autoaway.sh autoawayd.sh notify.sh uninstall.sh
     echo "installing cron..."

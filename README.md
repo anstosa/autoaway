@@ -31,7 +31,7 @@ vim config.sh
 ./install.sh
 ```
 
-# Usage
+## Usage
 
 To check on the process, attach to the session named "autoaway":
 ```

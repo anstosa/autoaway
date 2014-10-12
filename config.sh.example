@@ -1,0 +1,9 @@
+#! /bin/sh
+
+# parameters for autoaway.py
+DEVICES="00:00:00:00:00:00 00:00:00:00:00:00"
+OPTIONS="--noarp --grace 0 --offpeakstart 23:00 --offpeakend 07:00 -v"
+
+# parameters for nest.py
+USER="user@example.com"
+PASS="password"

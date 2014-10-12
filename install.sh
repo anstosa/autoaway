@@ -2,9 +2,10 @@
 
 # get script dir
 DIR="$(cd "$( dirname "$0" )" && pwd)"
+USER="$(whoami)"
 
 # create job
-JOB="@reboot $DIR/autoawayd.sh start"
+JOB="@reboot $USER $DIR/autoawayd.sh start"
 
 if [ "$1" = "remove" ]; then
     echo "stopping autoaway..."

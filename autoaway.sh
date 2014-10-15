@@ -1,11 +1,11 @@
 #! /bin/bash
 
 # go to autoaway dir
-cd "$( dirname "${BASH_SOURCE[0]}" )"
+DIR="$( cd "$( dirname "$0" )" && pwd )"
 
 # import config
 source config.sh
 
 # start autoaway
-python autoaway/autoaway.py --devices $DEVICES --notify notify.sh $OPTIONS
+python autoaway/autoaway.py --devices $DEVICES --notify $DIR/notify.sh $OPTIONS
 
